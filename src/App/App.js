@@ -3,6 +3,7 @@ import './App.css';
 import SideMenu from '../components/SideMenu';
 import Header from '../components/Header';
 import { createTheme, CssBaseline, makeStyles, ThemeProvider } from '@material-ui/core';
+import Employee from '../pages/Employees/Employees';
 
 const theme = createTheme({
   palette: {
@@ -13,6 +14,21 @@ const theme = createTheme({
     secondary: {
       main: '#f83245',
       light: '#f8324526'
+    },
+    background: {
+      default: '#f4f5fd'
+    }
+  },
+  overrides: {
+    MuiAppBar: {
+      root: {
+        transform: 'translateZ(0)'
+      }
+    }
+  },
+  props: {
+    MuiIconButton: {
+      disableRipple: true,
     }
   }
 });
@@ -30,6 +46,7 @@ function App() {
       <SideMenu />
       <div className={classes.appMain}>
         <Header/>
+        <Employee />
       </div>
       <CssBaseline />
     </ThemeProvider>

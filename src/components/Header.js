@@ -4,6 +4,7 @@ import NotificationsNoneIcon from '@material-ui/icons/NotificationsNone';
 import ChatBubbleOutlineIcon from '@material-ui/icons/ChatBubbleOutline';
 import PowerSettingsNewIcon from '@material-ui/icons/PowerSettingsNew';
 import SearchIcon from '@material-ui/icons/Search';
+import { Translate } from '@material-ui/icons';
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -52,6 +53,6 @@ export default function Header() {
                     </Grid>
                 </Grid>
             </Toolbar>
-        </AppBar>
+        </AppBar>        
     )
 }
