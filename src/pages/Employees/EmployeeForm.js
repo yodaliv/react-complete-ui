@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { makeStyles } from '@material-ui/core';
+import { Grid, TextField, makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
     root: {
-        backgroundColor: '#fff',
+        '& .MuiFormControl-root': {
+            margin: theme.spacing(1),
+            width: '80%'
+        }
     },
     searchInput: {
         opacity: '0.6',
@@ -33,11 +36,36 @@ const initialFValues = {
 export default function EmployeeForm() {
 
     const classes = useStyles();
-    const [value , setValue] = useState();
+    const [values , setValues] = useState(initialFValues);
+    const handleInputChange = e =>{
+        const {name, value} = e.target
+        setValues({
+            ...values,
+            [name]:value
+        })
+
+        console.log(values);
+    }
     return(
-        <form>
-            <Grid>
-                
+        <form className={ classes.root }>
+            <Grid container>
+                <Grid item xs={6}>
+                    <TextField 
+                        variant="outlined" 
+                        label="Full name" 
+                        name="fullName"
+                        value={ values.fullName}
+                        onChange={handleInputChange}
+                    />
+                    <TextField 
+                        variant="outlined" 
+                        label="Email" 
+                        name="emil"
+                        value={ values.email}
+                    />
+                </Grid>
+                <Grid item xs={6}>
+                </Grid>
             </Grid>
         </form>
     )
