@@ -16,9 +16,9 @@ export default function RadioGroup(props) {
             >
                 {
                     items.map(
-                        ( item, index)=> {
-                          return <FormControlLabel value={item.id} control={<Radio />} label={item.title} />
-                        }
+                         item => (
+                           <FormControlLabel key={item.id} value={item.id} control={<Radio />} label={item.title} />
+                        )
                     )
                 }
             </MuiRadioGroup>

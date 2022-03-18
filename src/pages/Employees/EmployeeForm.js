@@ -1,5 +1,6 @@
 import React from 'react';
 import { Grid } from '@material-ui/core';
+
 import Controls from '../../components/controls/Controls';
 import { useForm, Form } from '../../components/useForm';
 import * as employeeService from '../../services/employeeService'
@@ -26,7 +27,6 @@ export default function EmployeeForm() {
 
     const {
         values,
-        setValues,
         handleInputChange
     } = useForm(initialFValues);
     
@@ -58,7 +58,13 @@ export default function EmployeeForm() {
                         label="Department"
                         value={ values.departmentId }
                         onChange={ handleInputChange }
-                        option={ employeeService.getDepartmentCollection() }
+                        options={ employeeService.getDepartmentCollection() }
+                    />
+                    <Controls.Checkbox 
+                        name="isPermanent"
+                        label="Permanent Employee"
+                        value= { values.isPermanent}
+                        onChange={ handleInputChange }
                     />
                 </Grid>
             </Grid>
