@@ -42,7 +42,7 @@ const useStyles = makeStyles({
 function App() {
   const classes = useStyles();
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider>
       <SideMenu />
       <div className={classes.appMain}>
         <Header/>

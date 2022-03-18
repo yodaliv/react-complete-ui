@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { makeStyles, Paper } from '@material-ui/core';
 import EmployeeForm from './EmployeeForm';
 import PageHeader from '../../components/PageHeader';
