@@ -1,7 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Card, Paper, Typography } from '@material-ui/core';
-import { findByLabelText } from '@testing-library/react';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -32,13 +31,13 @@ export default function PageHeader(props) {
   return (
     <Paper elevation={0} square className={ classes.root }>
         <div className={ classes.PageHeader }>
-            <Card className={ classes.pageIcon }>{icon}</Card>
+            <Card className={ classes.pageIcon }>{ icon }</Card>
             <div className={ classes.pageTitle }>
                 <Typography variant="h6" component="div">
-                    {title}
+                    { title }
                 </Typography>
-                <Typography variant="subtitle2" component="div" className={ classes.page}>
-                    {subtitle}
+                <Typography variant="subtitle2" component="div" className={ classes.page }>
+                    { subtitle }
                 </Typography>
             </div>
         </div>    

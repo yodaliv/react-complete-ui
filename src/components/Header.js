@@ -1,10 +1,9 @@
 import React from 'react';
-import { AppBar, Toolbar, Grid, withStyles, IconButton, Badge, InputBase, makeStyles } from '@material-ui/core';
+import { AppBar, Badge, Grid, IconButton, InputBase, makeStyles, Toolbar } from '@material-ui/core';
 import NotificationsNoneIcon from '@material-ui/icons/NotificationsNone';
 import ChatBubbleOutlineIcon from '@material-ui/icons/ChatBubbleOutline';
 import PowerSettingsNewIcon from '@material-ui/icons/PowerSettingsNew';
 import SearchIcon from '@material-ui/icons/Search';
-import { Translate } from '@material-ui/icons';
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -26,12 +25,13 @@ const useStyles = makeStyles(theme => ({
 export default function Header() {
 
     const classes = useStyles();
+    
     return(
         <AppBar position="static" className={classes.root} >
             <Toolbar>
                 <Grid container alignItems="center">
                     <Grid item>
-                        <InputBase placeholder="Search topics" startAdornment={<SearchIcon fontSize="small"/>} className={classes.searchInput}/>
+                        <InputBase placeholder="Search topics" startAdornment={<SearchIcon fontSize="small"/>} className={ classes.searchInput }/>
                     </Grid>
                     <Grid item sm>
 

@@ -25,8 +25,22 @@ const initialFValues = {
 
 export default function EmployeeForm() {
 
+    const validate = () => {
+        let temp = {}
+        temp.fullName = values.fullName ? "" : "This field is required.";
+        temp.email = (/$|.+@.+..+/).test(values.email) ? "" : "Email is not valid.";
+        temp.mobile = values.mobile.length > 9 ? "" : "Minimun 10 numbers required.";
+        temp.city = values.city ? "" : "This field is required.";
+        temp.departmentId = values.departmentId.length != 0 ? "" : "This field is required.";
+        setErrors({
+            ...temp
+        });
+    }
     const {
         values,
+        setValues,
+        errors,
+        setErrors,
         handleInputChange
     } = useForm(initialFValues);
     
@@ -37,12 +51,22 @@ export default function EmployeeForm() {
                     <Controls.Input
                     label="Full name" 
                     name="fullName"
-                    value={ values.fullName}
+                    value={ values.fullName }
                     onChange={ handleInputChange } />
                     <Controls.Input
                     label="Email" 
                     name="email"
-                    value={ values.email}
+                    value={ values.email }
+                    onChange={ handleInputChange } />
+                    <Controls.Input
+                    label="Mobile" 
+                    name="mobile"
+                    value={ values.mobile }
+                    onChange={ handleInputChange } />
+                    <Controls.Input
+                    label="City" 
+                    name="city"
+                    value={ values.city }
                     onChange={ handleInputChange } />
                 </Grid>
                 <Grid item xs={6}>
@@ -62,14 +86,26 @@ export default function EmployeeForm() {
                     />
                     <Controls.Datepicker 
                         name="hireDate"
-                        label=""
+                        label="Hire Date"
+                        value={ values.hireDate }
+                        onChange={ handleInputChange }
                     />
                     <Controls.Checkbox 
                         name="isPermanent"
                         label="Permanent Employee"
-                        value= { values.isPermanent}
+                        value={ values.isPermanent }
                         onChange={ handleInputChange }
                     />
+                    <div>
+                        <Controls.Button
+                            text="Submit"
+                            type="submit"
+                        />
+                        <Controls.Button
+                            text="Reset"
+                            color="default"
+                        />
+                    </div>
                 </Grid>
             </Grid>
         </Form>

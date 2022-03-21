@@ -3,7 +3,8 @@ import { FormControl, InputLabel, MenuItem, Select as MuiSelect } from '@materia
 
 export default function Select(props) {
 
-    const {name, label, value, onChange, options } = props
+    const {name, label, value, onChange, options } = props;
+
     return (
         <FormControl variant="outlined" >
             <InputLabel>{ label }</InputLabel>
@@ -16,7 +17,7 @@ export default function Select(props) {
                 <MenuItem value="">None</MenuItem>
                 {
                     options.map(
-                        item =>(<MenuItem key={item.id} value={item.id}>{item.title}</MenuItem>)
+                        item =>(<MenuItem key={ item.id } value={ item.id }>{ item.title }</MenuItem>)
                     )
                 }
 

@@ -8,17 +8,18 @@ export default function Checkbox(props) {
         target:{
             name, value
         }
-    })
+    });
+
     return (
         <FormControl>
             <FormControlLabel
                 control={<MuiCheckbox
-                    name={name}
+                    name={ name }
                     color="primary"
-                    checked={value}
-                    onChange={e => onChange(convertToDefEventPara(name,e.target.checked))}
+                    checked={ value }
+                    onChange={ e => onChange(convertToDefEventPara(name, e.target.checked)) }
                 />}
-                label={label}
+                label={ label }
             />
         </FormControl>
     );

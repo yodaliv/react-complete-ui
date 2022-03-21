@@ -1,5 +1,5 @@
 import React from 'react';
-import { makeStyles, withStyles } from '@material-ui/core';
+import { withStyles } from '@material-ui/core';
 
 const style = {
     sideMenu: {
@@ -15,9 +15,10 @@ const style = {
 
 const SideMenu = (props) => {
 
-const  { classes } = props;
+    const  { classes } = props;
+
     return(
-        <div className={classes.sideMenu}>
+        <div className={ classes.sideMenu }>
 
         </div>
     )

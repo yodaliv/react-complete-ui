@@ -1,8 +1,9 @@
 import React from 'react';
+import { createTheme, CssBaseline, makeStyles, ThemeProvider } from '@material-ui/core';
+
 import './App.css';
 import SideMenu from '../components/SideMenu';
 import Header from '../components/Header';
-import { createTheme, CssBaseline, makeStyles, ThemeProvider } from '@material-ui/core';
 import Employee from '../pages/Employees/Employees';
 
 const theme = createTheme({
@@ -41,10 +42,11 @@ const useStyles = makeStyles({
 })
 function App() {
   const classes = useStyles();
+  
   return (
     <ThemeProvider>
       <SideMenu />
-      <div className={classes.appMain}>
+      <div className={ classes.appMain }>
         <Header/>
         <Employee />
       </div>
